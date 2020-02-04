@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <!--/*@thymesVar id="title" type="java"*/-->
-    <h2 th:text="${title}"></h2>
+    <!--/*@thymesVar id="posts" type="list of all posts"*/-->
+    <div th:each="entry : ${posts}">
+        <!--/*@thymesVar id="getTitle" type="Title of the post"*/-->
+        <h2 th:text="${entry.getTitle()}"></h2>
+    </div>
 </body>
 </html>
